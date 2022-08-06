@@ -33,11 +33,23 @@ const char	*args_type(va_list args, const char *format, t_list *content)
 		// va_arg nous permet de traduire l'argument %d en int !
 		d = va_arg(args, int);
 		ft_putnbr(d);
-		args->len += intlen(d); // FAIRE UNE FT QUI COMPTE LE NOMBRE DE CHIFFRES !
+		args->len += int_len(d); // FAIRE UNE FT QUI COMPTE LE NOMBRE DE CHIFFRES !
 	}
 	else if (*format == 'c')
 	{
+		char	c;
 
+		c = va_arg(args, char);
+		if (!c)
+		{
+			write(1, "(null)", 6);
+			content->len += 6;
+		}
+		else
+		{
+		ft_putchar(c);
+		args->len += 1;
+		}
 	}
 	else if (*format == 's')
 	{

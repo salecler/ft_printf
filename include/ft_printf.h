@@ -12,7 +12,9 @@ typedef struct s_list
 const char *read_text(s_list *content, const char *format);
 const char	*args_type(va_list args, const char *format, t_list *content);
 
+void    ft_putchar(char c);
 
+int int_len(int d);
 int ft_strlen(const char *format);
 char    *ft_strchr(const char *format);
 
