@@ -1,5 +1,22 @@
 #include "ft_printf.h"
 
+ft_printnbr(int num)
+{
+    char    *number;
+    int len;
+
+    len = 0;
+    number = ft_itoa(num);
+    len = ft_strlen(number);
+    while (*number)
+    {
+        ft_putchar(*number);
+        number++;
+    }
+    free(number);
+    return (len);
+}
+
 void    ft_putchar(char c)
 {
     write(1, &c, 1);

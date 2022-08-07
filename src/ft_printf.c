@@ -12,7 +12,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format == '%') // On check l'argument
 			format = args_type(args, format + 1, &content); // Check de l'argument, arg pour traduire le type d'argument, format pour le voir et content pour y ajouter des informations.
-		else //Si pas de % et bien ce sera du texte ! Pas besoin d'args pour le coup car il n'y en a pas !
+		else //Si pas de % et bien ce sera du texte ! Pas besoin d'args pour le coup car il n'y en a pas ou plus!
 			format = read_text(&content, format);
 		if (!format)
 		{
@@ -69,11 +69,27 @@ const char	*args_type(va_list args, const char *format, t_list *content)
 	}
 	else if (*format == 'p')
 	{
-		
+		unsigned long	ptr;
+
+		*ptr = va_arg(args, unsigned long);
+		if (!ptr)
+		{
+			write(1, "(null)", 6);
+			content->len += 6;
+		}
+		else
+			content->len += ft_putptr(ptr); // ???????????????????
 	}
 	else if (*format == 'x')
 	{
 		
+	}
+	else if (*format == 'd' || *format == 'i')
+	{
+		int	num;
+
+		num = va_arg(args, int);
+		content->len += ft_printnbr(num);
 	}
 }
 
@@ -83,10 +99,7 @@ const char *read_text(s_list *content, const char *format)
 	char	*next;
 
 	next = ft_strchr(format);
-	if (next)
-		content->width = next - format;
-	else
-		content->width = ft_strlen(format);
+	content->width = ft_strlen(format);
 	write(1, format, content->width);
 	content->len += content->width;
 	while (*format && *format != '%')
