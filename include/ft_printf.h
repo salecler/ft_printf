@@ -4,20 +4,13 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-typedef struct s_list
-{
-    int len;
-    int width;
-}              t_list;
-const char *read_text(s_list *content, const char *format);
-const char	*args_type(va_list args, const char *format, t_list *content);
+//Main archive
+format_type(va_list args, char format);
 
-
-void    ft_putchar(char c);
-ft_printnbr(int num);
-int int_len(int d);
-int ft_strlen(const char *format);
-char    *ft_strchr(const char *format);
-
+//Utils archive
+ft_putchar(char c);
+ft_putstr(char *str);
+ft_putnbr();
+ft_putnbr_base();
 
 #endif
