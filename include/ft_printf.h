@@ -8,6 +8,7 @@
 format_type(va_list args, char format);
 
 //Utils archive
+ft_strlen(char *str);
 ft_putchar(char c);
 ft_putstr(char *str);
 ft_putnbr();
