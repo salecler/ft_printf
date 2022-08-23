@@ -11,7 +11,9 @@ format_type(va_list args, char format);
 ft_strlen(char *str);
 ft_putchar(char c);
 ft_putstr(char *str);
-ft_putnbr();
-ft_putnbr_base();
 
+//Formats archive
+ft_putnbr(int n);
+ft_putnbr_base(int n, char *base);
+ft_putptr(int n);
 #endif

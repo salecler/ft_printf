@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -48,7 +48,7 @@ int	format_type(va_list args, char format)
 		len += ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
 		len += ft_putptr(va_arg(args, void *));
-	else if (format == 'd' || format == 'i');
+	else if (format == 'd' || format == 'i')
 		len += ft_putnbr(va_arg(args, int));
 	else if (format == 'u')
 		len += ft_putnbr_base(va_arg(args, int), "0123456789");
@@ -63,6 +63,6 @@ int	format_type(va_list args, char format)
 
 int	main(void)
 {
-	ft_printf(void);
+	ft_printf("hola");
 	return (0);
 }
