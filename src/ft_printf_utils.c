@@ -6,13 +6,13 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:32:06 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/22 19:12:32 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/24 13:39:48 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static int	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	len;
 
@@ -22,13 +22,13 @@ static int	ft_strlen(char *str)
 	return (len);
 }
 
-static int	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-static int	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
@@ -36,5 +36,7 @@ static int	ft_putstr(char *str)
 	while (str[i])
 	{
 		write(1, &str[i], 1);
+		i++;
 	}
+	return (ft_strlen(str));
 }

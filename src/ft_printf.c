@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:32:02 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/22 19:12:25 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:17:07 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printf(const char *str, ...)
 {
-	var_list	args;
+	va_list		args;
 	int			len;
 	int			i;
 
@@ -33,6 +33,7 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(args);
+	return (len);
 }
 
 int	format_type(va_list args, char format)
@@ -43,7 +44,7 @@ int	format_type(va_list args, char format)
 	if (format == '%')
 		len += ft_putchar('%');
 	else if (format == 'c')
-		len += ft_putchar(va_arg(args, char));
+		len += ft_putchar(va_arg(args, int));
 	else if (format == 's')
 		len += ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
@@ -63,6 +64,9 @@ int	format_type(va_list args, char format)
 
 int	main(void)
 {
-	ft_printf("hola");
+	char *str;
+	
+	str = "hola monsieur!";
+	printf("%d", ft_printf("%s\n", str));
 	return (0);
 }
