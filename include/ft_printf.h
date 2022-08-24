@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:56:09 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/24 17:47:23 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:54:35 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdio.h>
+
 //Main archive
 int	format_type(va_list args, char format);
 
