@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:32:02 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/24 14:17:07 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:27:45 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,4 @@ int	format_type(va_list args, char format)
 	else
 		len += ft_putstr(va_arg(args, char *));
 	return (len);
-}
-
-int	main(void)
-{
-	char *str;
-	
-	str = "hola monsieur!";
-	printf("%d", ft_printf("%s\n", str));
-	return (0);
 }
