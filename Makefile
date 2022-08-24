@@ -6,7 +6,7 @@
 #    By: salecler <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/24 16:23:21 by salecler          #+#    #+#              #
-#    Updated: 2022/08/24 17:26:37 by salecler         ###   ########.fr        #
+#    Updated: 2022/08/24 17:35:57 by salecler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,6 @@ fclean: clean
 	@echo "$(WHITE)ft_printf executable files cleaned!$(DEF_COLOR)"
 
 re: fclean all
-	@echo "$(WHITE)leaned and rebuilt!$(DEF_COLOR)"
+	@echo "$(WHITE)cleaned and rebuilt!$(DEF_COLOR)"
 
 .PHONY: clean
