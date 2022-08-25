@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:55:55 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/25 11:29:38 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/25 22:25:31 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ int	ft_putnbr_base(unsigned long n, char *base)
 
 	nbr = (unsigned int)n;
 	len = 0;
-	if (nbr >= 16)
+	if (nbr >= ft_strlen(base))
 	{
-		ft_putnbr_base(nbr / 16, base);
-		nbr = nbr % 16;
+		ft_putnbr_base(nbr / ft_strlen(base), base);
+		nbr = nbr % ft_strlen(base);
 	}
 	len++;
 	ft_putchar(base[nbr]);
