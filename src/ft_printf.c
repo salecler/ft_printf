@@ -6,11 +6,12 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:32:02 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/24 17:48:56 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/25 11:31:23 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <stdio.h>
 
 int	ft_printf(const char *str, ...)
 {

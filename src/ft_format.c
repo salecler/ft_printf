@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:55:55 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/24 17:47:05 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/25 11:29:38 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_putnbr_base(unsigned long n, char *base)
 
 	nbr = (unsigned int)n;
 	len = 0;
-	if (nbr > 16)
+	if (nbr >= 16)
 	{
 		ft_putnbr_base(nbr / 16, base);
 		nbr = nbr % 16;
@@ -53,41 +53,32 @@ int	ft_putnbr_base(unsigned long n, char *base)
 	return (len);
 }
 
-int	ft_puthex(int n, char *base)
+int	ft_puthex(size_t n, char *base)
 {
-	int	len;
-	int	nbr;
+	static int	len;
 
 	len = 0;
-	nbr = n;
-	if (nbr < 0)
+	if (n >= 16)
 	{
-		write(1, "-", 1);
-		nbr *= -1;
-	}
-	if (nbr > 16)
-	{
-		ft_puthex(nbr / 16, base);
-		nbr = nbr % 16;
+		ft_puthex(n / 16, base);
+		n = n % 16;
 	}
 	len++;
-	ft_putchar(nbr + '0');
-	if (n < 0)
-		len++;
+	ft_putchar(base[n]);
 	return (len);
 }
 
 int	ft_putptr(void *n)
 {
-	int		len;
-	int		nbr;
-	char	*base;
+	int			len;
+	size_t		nbr;
+	char		*base;
 
 	len = 0;
-	nbr = (int)n;
+	nbr = (size_t)n;
 	base = "0123456789abcdef";
 	write(1, "0x", 2);
 	len += 2;
-	len += ft_putnbr_base(nbr, base);
+	len += ft_puthex(nbr, base);
 	return (len);
 }

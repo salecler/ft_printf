@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:56:09 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/24 17:54:35 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/25 11:28:54 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	ft_putstr(char *str);
 //Formats archive
 int	ft_putnbr(int n);
 int	ft_putnbr_base(unsigned long n, char *base);
-int	ft_puthex(int n, char *base);
+int	ft_puthex(size_t n, char *base);
 int	ft_putptr(void *n);
 #endif
