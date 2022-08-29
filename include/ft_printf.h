@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:56:09 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/25 22:25:23 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/29 15:58:01 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 
 //Main archive
+int	ft_printf(const char *str, ...);
 int	format_type(va_list args, char format);
 
 //Utils archive

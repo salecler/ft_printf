@@ -6,7 +6,7 @@
 /*   By: salecler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:55:55 by salecler          #+#    #+#             */
-/*   Updated: 2022/08/25 22:25:31 by salecler         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:10:27 by salecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putnbr(int n)
 {
-	int			nbr;
+	long int	nbr;
 	static int	len;
 
 	nbr = n;
